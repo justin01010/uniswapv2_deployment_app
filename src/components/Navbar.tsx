@@ -26,7 +26,7 @@ import { HamburgerIcon, CloseIcon, AddIcon } from '@chakra-ui/icons';
 
 const Links = ['Dashboard', 'Projects', 'Team'];
 
-const NavLink = ({ children }) => (
+const NavLink = ({ children }: { children: ReactNode }) => (
   <Link
     px={2}
     py={1}
@@ -77,6 +77,9 @@ export default function NavBar() {
             </HStack>
           </HStack>
           <Flex alignItems={'center'}>
+            <MetaMaskProvider debug={false} sdkOptions={sdkOptions}>
+              <ConnectWalletButton />
+            </MetaMaskProvider>
             <Button
               variant={'solid'}
               colorScheme={'teal'}
